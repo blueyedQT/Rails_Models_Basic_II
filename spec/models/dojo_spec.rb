@@ -15,21 +15,21 @@ RSpec.describe Dojo, type: :model do
   	expect(dojo.errors[:city].any?).to eq(true)
   end
 
-  it 'requires state to be at leats 2 characters long' do 
+  it 'requires state to be at least 2 characters long' do 
   	dojo = Dojo.new(state: 'C')
   	dojo.valid?
 
   	expect(dojo.errors[:state].any?).to eq(true)
   end
 
-  it 'has many ninjas' do
-  	dojo = Dojo.create(name: "Dream Team", city: "San Jose", state: "CA")
+	it 'has many ninjas' do
+    dojo = Dojo.create(name: "Dream Team", city: "San Jose", state: "CA")
 
-  	ninja1 = dojo.ninjas.create(first_name: "Eduardo", last_name: "Baik")
-  	ninja2 = dojo.ninjas.create(frist_name: "Bredan", last_name: "Stanton")
+    ninja1 = dojo.ninjas.create(first_name: "Eduardo", last_name: "Baik")
+    ninja2 = dojo.ninjas.create(first_name: "Brendan", last_name: "Stanton")
 
-  	expect(dojo.ninjas).to include(ninja1)
-  	expect(dojo.ninjas).to include(ninja2)
+    expect(dojo.ninjas).to include(ninja1)
+    expect(dojo.ninjas).to include(ninja2)
   end
 
   it 'deletes associated ninjas upon deletion' do 

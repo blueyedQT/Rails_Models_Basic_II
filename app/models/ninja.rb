@@ -1,3 +1,3 @@
 class Ninja < ActiveRecord::Base
-  belongs_to :dojo
+  has_one :dojo
 end

@@ -26,7 +26,7 @@ RSpec.describe Dojo, type: :model do
   	dojo = Dojo.create(name: "Dream Team", city: "San Jose", state: "CA")
 
   	ninja1 = dojo.ninjas.create(first_name: "Eduardo", last_name: "Baik")
-  	ninja2 = dojo.ninjas.create(frist_name: "Bredan", last_name: "Stanton")
+  	ninja2 = dojo.ninjas.create(first_name: "Brendan", last_name: "Stanton")
 
   	expect(dojo.ninjas).to include(ninja1)
   	expect(dojo.ninjas).to include(ninja2)
